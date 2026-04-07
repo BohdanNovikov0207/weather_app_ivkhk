@@ -1,4 +1,4 @@
-import modules.gui as gui
+import modules
 
 if __name__ == "__main__":
-    gui.app.mainloop()
+    modules.app.mainloop()
