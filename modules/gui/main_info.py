@@ -2,31 +2,31 @@ import customtkinter as ctk
 from .main_screen import app
 from ..read_json import read
 from ..weather_data import *
-# для чего нужны импорты из тех или иных файлов, обьяснить каждое
+# we import app from main_screen where will be the following additions, we import function read from read_json to get information from certain fail from static folder, we need weather_date to get needed information about weather
 
-# для чего необходимо наследование CTkFrame
+# we need CTkFrame to get access to the certain functions of ctk
 class Info(ctk.CTkFrame):
-    # для чего нужен child_master
+    # we created parameter to use it further
     def __init__(self, child_master: ctk.CTk):
         ctk.CTkFrame.__init__(
-            # за что отвечает каждый параметр
+            # 
             self,
             master = child_master,
             width = 925,
             height = 800,
             fg_color = "#5DA7B1"
         )
-        # в чем суть grid и чем он отличается от place
+        # we used grid to arrange what we have created, it arrange using rows and columns
         self.grid(row = 0, column = 1)
         
-        # что делает CTkLabel, проверить и рассказать
+        # we used CTkLabel to create text and make it looks way we need
         self.current_position = ctk.CTkLabel(
             master = self,
             text = 'Praegune linn',
             font = ('Roboto Slab', 35, 'bold'),
             text_color = '#FFFFFF'
         )
-        # в чем суть place и чем он отличается от grid
+        # we used place to arrange what we have created, it arrange using exact position of x and y
         self.current_position.place(x = 330, y = 100)
         city_name = read("config.json")["list_city"][0]
         get_info_weather(city_name, "weather_data.json", False)
