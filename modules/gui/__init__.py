@@ -6,4 +6,5 @@ from .image import main_image
 from .forecast_component import *
 from .city_weather import *
 
-# __init__.py is needed for further import of this inites to other folders
+# для чего необходим этот __init__.py
+# loob paketi mis võimaldab importida kõik funksioonid, klassid jne. moodulitest

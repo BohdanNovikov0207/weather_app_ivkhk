@@ -4,7 +4,7 @@ from .write_json import write
 # get - gets date about adress
 api_key = "f45b384d06f8d6558d2f50d57cd3220f"
 
-# it add city and api_key to the link to know which information from the website is needed
+# Ilmainfo päring(запрос) API kaudu
 def get_info_weather(city_name: str, file_name: str, forecast: bool):
     if forecast:
         url = f'https://api.openweathermap.org/data/2.5/forecast?q={city_name}&appid={api_key}&lang=en&units=metric'
