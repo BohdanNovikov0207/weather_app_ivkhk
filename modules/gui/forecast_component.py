@@ -29,8 +29,7 @@ class ForecastComponent(ctk.CTkFrame):
         day = data["dt_txt"][8:10]
         month = data["dt_txt"][5:7]
         date = f"Kuupäev: {day}.{month}"
-        # Срезы нужны чтобы взять часть текста по индексу
-        # Например: "text"[1:3] -> ex
+
         self.DATE = ctk.CTkLabel(
             self,
             font= ("Roboto Slab", 22, "bold"),

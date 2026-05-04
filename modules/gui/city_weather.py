@@ -26,11 +26,9 @@ class CityFrame(ctk.CTkFrame):
         temp_max = round(self.DATA['main']['temp_max'])
 
         timez = timedelta(seconds=self.DATA['timezone'])
-        # 
+
         time = (datetime.now(timezone.utc) + timez).strftime("%H:%M")
-        # 
-        
-        # Перевод с англ на эст, API не поддерживает эст язык по умолчанию
+
         description = self.DATA['weather'][0]['description'].capitalize()
         if description == "Clear sky":
             description = "Selge taev"
@@ -62,7 +60,6 @@ class CityFrame(ctk.CTkFrame):
         elif description == "Mist":
             description = "Udu"
 
-        # CTkLabel - создает текст
         self.TEMP = ctk.CTkLabel(
             text = f"{temp}°",
             master = self,

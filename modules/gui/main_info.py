@@ -85,5 +85,4 @@ class Info(ctk.CTkFrame):
         )
         self.DESCRIPTION.place(x = 410, y = 300)
         
-# в чем суть 89 строки и где этот обьект используется потом, каким образом он выводится в окно приложения
 info = Info(child_master = app)

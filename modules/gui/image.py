@@ -4,7 +4,7 @@ from ..read_json import *
 from .main_screen import *
 from ..weather_data import *
 
-# PIL (Pillow) - модуль для роботы с картинками
+# PIL helps us work with images
 
 class WeatherImage(ctk.CTkLabel):
     def __init__(self, width: int, height: int, master: ctk.CTk | ctk.CTkFrame, name_json: str, count: int = None):
@@ -24,7 +24,7 @@ class WeatherImage(ctk.CTkLabel):
             data_weather = data_weather["list"][self.count]
         name_image = data_weather["weather"][0]["icon"]
         path_image = os.path.abspath(__file__ + f'/../../../images/{name_image}.png')
-        # PIL.Image.open - открывает/создает картинку 
+        # We need PIL.Image.open when we want to open or create image
         image = PIL.Image.open(fp = path_image)
         return ctk.CTkImage(
             image,

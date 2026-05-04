@@ -6,4 +6,4 @@ from .image import main_image
 from .forecast_component import *
 from .city_weather import *
 
-# для чего необходим этот __init__.py
+# __init__.py is needed for further import of this inites to other folders
